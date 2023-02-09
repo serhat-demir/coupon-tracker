@@ -9,7 +9,11 @@
         android:id="@+id/couponsFragment"
         android:name="com.serhatd.coupontracker.ui.view.fragment.CouponsFragment"
         tools:layout="@layout/fragment_coupons"
-        android:label="CouponsFragment" />
+        android:label="CouponsFragment" >
+        <action
+            android:id="@+id/couponsToAddCoupon"
+            app:destination="@id/addCouponFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addCouponFragment"
         android:name="com.serhatd.coupontracker.ui.view.fragment.AddCouponFragment"
