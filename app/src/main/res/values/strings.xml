@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">CouponTracker</string>
+    <string name="app_name">Coupon Tracker</string>
+    <string name="app_title">My Coupons</string>
 </resources>
