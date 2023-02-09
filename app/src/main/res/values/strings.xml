@@ -3,4 +3,13 @@
 
     <string name="title_my_coupons">My Coupons</string>
     <string name="title_add_coupon">Add Coupon</string>
+    <string name="card_label_discount">discount</string>
+    <string name="card_label_expires_at">Expires at</string>
+    <string name="card_label_open_website">tap to open website</string>
+    <string name="card_label_create_reminder">tap to create reminder</string>
+    <string name="card_label_copy">tap to copy</string>
+    <string name="card_label_notes">notes</string>
+    <string name="card_label_edit">Edit</string>
+    <string name="card_label_share">Share</string>
+    <string name="card_label_delete">Delete</string>
 </resources>

@@ -13,6 +13,9 @@ data class Coupon(
     @ColumnInfo("url")
     var url: String,
 
+    @ColumnInfo("code")
+    var code: String,
+
     @ColumnInfo("notes")
     var notes: String,
 

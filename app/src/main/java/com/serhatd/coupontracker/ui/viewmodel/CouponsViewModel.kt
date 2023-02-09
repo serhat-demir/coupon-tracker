@@ -13,7 +13,11 @@ class CouponsViewModel @Inject constructor(private val repo: CouponTrackerReposi
         repo.getCoupons()
     }
 
-    fun editCoupon(id: Int, url: String, notes: String, currency: String, discount: Int, expires_at: String) {
-        repo.editCoupon(id, url, notes, currency, discount, expires_at)
+    fun editCoupon(id: Int, url: String, notes: String, code: String, currency: String, discount: Int, expires_at: String) {
+        repo.editCoupon(id, url, notes, code, currency, discount, expires_at)
+    }
+
+    fun deleteCoupon(id: Int) {
+        repo.deleteCoupon(id)
     }
 }

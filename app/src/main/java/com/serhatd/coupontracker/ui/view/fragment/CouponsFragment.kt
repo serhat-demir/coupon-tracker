@@ -8,10 +8,10 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.room.Room
+import androidx.navigation.Navigation
 import com.serhatd.coupontracker.R
-import com.serhatd.coupontracker.data.room.DB
 import com.serhatd.coupontracker.databinding.FragmentCouponsBinding
+import com.serhatd.coupontracker.ui.view.adapter.CouponAdapter
 import com.serhatd.coupontracker.ui.viewmodel.CouponsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -40,8 +40,13 @@ class CouponsFragment : Fragment() {
     private fun initObservers() {
         viewModel.coupons.observe(viewLifecycleOwner) {
             it?.let {
-                Toast.makeText(requireContext(), it[0].url, Toast.LENGTH_SHORT).show()
+                val adapter = CouponAdapter(requireContext(), viewModel, it)
+                binding.couponAdapter = adapter
             }
         }
+    }
+
+    fun navToAddCoupon(view: View) {
+        Navigation.findNavController(view).navigate(R.id.couponsToAddCoupon)
     }
 }

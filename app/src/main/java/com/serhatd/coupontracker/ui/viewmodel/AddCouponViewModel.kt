@@ -10,8 +10,8 @@ class AddCouponViewModel @Inject constructor(private val repo: CouponTrackerRepo
     val currencies = repo.currencies
     val navigationObserver = repo.navigationObserver
 
-    fun addCoupon(url: String, notes: String, currency: String, discount: Int, expires_at: String) {
-        repo.addCoupon(url, notes, currency, discount, expires_at)
+    fun addCoupon(url: String, notes: String, code: String, currency: String, discount: Int, expires_at: String) {
+        repo.addCoupon(url, notes, code, currency, discount, expires_at)
     }
 
     fun getCurrencies() {

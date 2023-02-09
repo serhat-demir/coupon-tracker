@@ -26,9 +26,9 @@ class CouponTrackerRepository(private val couponDao: CouponDao, private val curr
         }
     }
 
-    fun addCoupon(url: String, notes: String, currency: String, discount: Int, expires_at: String) {
+    fun addCoupon(url: String, notes: String, code: String, currency: String, discount: Int, expires_at: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val coupon = Coupon(0, url, notes, currency, discount, expires_at)
+            val coupon = Coupon(0, url, notes, code, currency, discount, expires_at)
             couponDao.addCoupon(coupon)
 
             withContext(Dispatchers.Main) {
@@ -37,10 +37,19 @@ class CouponTrackerRepository(private val couponDao: CouponDao, private val curr
         }
     }
 
-    fun editCoupon(id: Int, url: String, notes: String, currency: String, discount: Int, expires_at: String) {
+    fun editCoupon(id: Int, url: String, notes: String, code: String, currency: String, discount: Int, expires_at: String) {
         CoroutineScope(Dispatchers.IO).launch {
-            val coupon = Coupon(id, url, notes, currency, discount, expires_at)
+            val coupon = Coupon(id, url, notes, code, currency, discount, expires_at)
             couponDao.editCoupon(coupon)
+            getCoupons()
+        }
+    }
+
+    fun deleteCoupon(id: Int) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val coupon = Coupon(id, "", "", "", "", 0, "")
+            couponDao.deleteCoupon(coupon)
+            getCoupons()
         }
     }
 
