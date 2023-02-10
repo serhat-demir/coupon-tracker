@@ -8,6 +8,9 @@
 
         <variable name="coupon"
             type="com.serhatd.coupontracker.data.entity.Coupon" />
+
+        <variable name="couponExpired"
+            type="Boolean" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -19,10 +22,11 @@
         android:layout_marginBottom="16dp">
 
         <LinearLayout
+            android:id="@+id/cardCoupon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="6dp"
-            android:background="@color/md_teal_400"
+            android:background="@{couponExpired ? @color/md_red_400 : @color/md_teal_400}"
             android:weightSum="10"
             android:orientation="horizontal">
 
@@ -60,20 +64,21 @@
                     android:layout_marginTop="4dp"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    android:text='@{coupon.discount + coupon.currency + " " + @string/card_label_discount}' />
+                    android:text='@{@string/card_label_discount(coupon.discount, coupon.currency)}' />
 
                 <TextView
+                    android:id="@+id/cardCouponLabelExpiresAt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="@{() -> couponAdapter.createReminder(coupon)}"
+                    android:onClick="@{() -> couponExpired ? null : couponAdapter.createReminder(coupon)}"
                     android:textColor="@color/white"
                     android:textSize="20sp"
-                    android:text='@{@string/card_label_expires_at + " " + coupon.expires_at}' />
+                    android:text="@{(couponExpired ? @string/card_label_expired_at(coupon.expires_at) : @string/card_label_expires_at(coupon.expires_at))}" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="@{() -> couponAdapter.createReminder(coupon)}"
+                    android:onClick="@{() -> couponExpired ? null : couponAdapter.createReminder(coupon)}"
                     android:textColor="@color/white"
                     android:textSize="12sp"
                     android:text="@string/card_label_create_reminder" />
@@ -85,9 +90,10 @@
                     android:layout_marginTop="4dp">
 
                     <LinearLayout
+                        android:id="@+id/cardCouponCode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/md_teal_700"
+                        android:background="@{couponExpired ? @color/md_red_700 : @color/md_teal_700}"
                         android:padding="4dp"
                         android:gravity="center"
                         android:onClick="@{() -> couponAdapter.copyCouponCode(coupon.code)}"
