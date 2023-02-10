@@ -18,8 +18,8 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun provideCouponTrackerRepository(couponDao: CouponDao, currencyDao: CurrencyDao): CouponTrackerRepository {
-        return CouponTrackerRepository(couponDao, currencyDao)
+    fun provideCouponTrackerRepository(@ApplicationContext context: Context, couponDao: CouponDao, currencyDao: CurrencyDao): CouponTrackerRepository {
+        return CouponTrackerRepository(context, couponDao, currencyDao)
     }
 
     @Provides

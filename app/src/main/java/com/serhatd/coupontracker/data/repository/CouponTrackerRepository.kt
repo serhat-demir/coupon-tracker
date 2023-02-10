@@ -1,6 +1,8 @@
 package com.serhatd.coupontracker.data.repository
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
+import com.serhatd.coupontracker.R
 import com.serhatd.coupontracker.data.entity.Coupon
 import com.serhatd.coupontracker.data.entity.Currency
 import com.serhatd.coupontracker.data.room.CouponDao
@@ -10,11 +12,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CouponTrackerRepository(private val couponDao: CouponDao, private val currencyDao: CurrencyDao) {
+class CouponTrackerRepository(private val context: Context, private val couponDao: CouponDao, private val currencyDao: CurrencyDao) {
     val coupons = MutableLiveData<List<Coupon>>()
     val currencies = MutableLiveData<List<Currency>>()
 
     val navigationObserver = MutableLiveData<Boolean>()
+    val toastObserver = MutableLiveData<String>()
 
     fun getCoupons() {
         CoroutineScope(Dispatchers.IO).launch {
@@ -26,22 +29,37 @@ class CouponTrackerRepository(private val couponDao: CouponDao, private val curr
         }
     }
 
-    fun addCoupon(url: String, notes: String, code: String, currency: String, discount: Int, expires_at: String) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val coupon = Coupon(0, url, notes, code, currency, discount, expires_at)
-            couponDao.addCoupon(coupon)
+    fun addCoupon(url: String, code: String, notes: String, currency: String, discount: Int, expires_at: String) {
+        if (url.isNotEmpty() && notes.isNotEmpty() && code.isNotEmpty() && currency.isNotEmpty() && discount > 0 && expires_at.isNotEmpty())
+            CoroutineScope(Dispatchers.IO).launch {
+                val coupon = Coupon(0, url, notes, code, currency, discount, expires_at)
+                couponDao.addCoupon(coupon)
 
-            withContext(Dispatchers.Main) {
-                navigationObserver.value = true
+                withContext(Dispatchers.Main) {
+                    navigationObserver.value = true
+                    navigationObserver.value = false
+                }
             }
+        else {
+            toastObserver.value = context.getString(R.string.msg_fields_cannot_be_empty)
+            toastObserver.value = ""
         }
     }
 
-    fun editCoupon(id: Int, url: String, notes: String, code: String, currency: String, discount: Int, expires_at: String) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val coupon = Coupon(id, url, notes, code, currency, discount, expires_at)
-            couponDao.editCoupon(coupon)
-            getCoupons()
+    fun editCoupon(id: Int, url: String, code: String, notes: String, currency: String, discount: Int, expires_at: String) {
+        if (url.isNotEmpty() && notes.isNotEmpty() && code.isNotEmpty() && currency.isNotEmpty() && discount > 0 && expires_at.isNotEmpty())
+            CoroutineScope(Dispatchers.IO).launch {
+                val coupon = Coupon(id, url, code, notes, currency, discount, expires_at)
+                couponDao.editCoupon(coupon)
+
+                withContext(Dispatchers.Main) {
+                    navigationObserver.value = true
+                    navigationObserver.value = false
+                }
+            }
+        else {
+            toastObserver.value = context.getString(R.string.msg_fields_cannot_be_empty)
+            toastObserver.value = ""
         }
     }
 

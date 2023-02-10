@@ -13,10 +13,22 @@
         <action
             android:id="@+id/couponsToAddCoupon"
             app:destination="@id/addCouponFragment" />
+        <action
+            android:id="@+id/couponsToEditCoupon"
+            app:destination="@id/editCouponFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCouponFragment"
         android:name="com.serhatd.coupontracker.ui.view.fragment.AddCouponFragment"
         android:label="fragment_add_coupon"
         tools:layout="@layout/fragment_add_coupon" />
+    <fragment
+        android:id="@+id/editCouponFragment"
+        android:name="com.serhatd.coupontracker.ui.view.fragment.EditCouponFragment"
+        android:label="EditCouponFragment"
+        tools:layout="@layout/fragment_edit_coupon" >
+        <argument
+            android:name="coupon"
+            app:argType="com.serhatd.coupontracker.data.entity.Coupon" />
+    </fragment>
 </navigation>

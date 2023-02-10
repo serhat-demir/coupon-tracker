@@ -8,14 +8,17 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.CalendarContract
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.serhatd.coupontracker.R
 import com.serhatd.coupontracker.data.entity.Coupon
 import com.serhatd.coupontracker.databinding.CardCouponBinding
+import com.serhatd.coupontracker.ui.view.fragment.CouponsFragmentDirections
 import com.serhatd.coupontracker.ui.viewmodel.CouponsViewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -76,8 +79,9 @@ class CouponAdapter(private val context: Context, private val viewModel: Coupons
         Toast.makeText(context, context.getString(R.string.msg_copied_to_clipboard), Toast.LENGTH_SHORT).show()
     }
 
-    fun editCoupon(coupon: Coupon) {
-        Toast.makeText(context, "edit ${coupon.code}", Toast.LENGTH_SHORT).show()
+    fun editCoupon(coupon: Coupon, view: View) {
+        val couponsToEditCoupon = CouponsFragmentDirections.couponsToEditCoupon(coupon)
+        Navigation.findNavController(view).navigate(couponsToEditCoupon)
     }
 
     fun shareCoupon(coupon: Coupon) {

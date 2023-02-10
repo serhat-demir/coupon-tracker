@@ -6,12 +6,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class AddCouponViewModel @Inject constructor(private val repo: CouponTrackerRepository): ViewModel() {
+class EditCouponViewModel @Inject constructor(private val repo: CouponTrackerRepository): ViewModel() {
     val currencies = repo.currencies
     val navigationObserver = repo.navigationObserver
+    val toastObserver = repo.toastObserver
 
-    fun addCoupon(url: String, code: String, notes: String, currency: String, discount: Int, expires_at: String) {
-        repo.addCoupon(url, code, notes, currency, discount, expires_at)
+    fun editCoupon(id: Int, url: String, code: String, notes: String, currency: String, discount: Int, expires_at: String) {
+        repo.editCoupon(id, url, code, notes, currency, discount, expires_at)
     }
 
     fun getCurrencies() {

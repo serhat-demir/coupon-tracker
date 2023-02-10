@@ -35,4 +35,9 @@
     <string name="share_coupon_subject_prefix">Coupon code for %1$s (%2$s%3$s discount) - %4$s</string>
     <string name="share_coupon_intent">text/plain</string>
     <string name="share_coupon_label">Share Coupon</string>
+    <string name="title_edit_coupon">Edit Coupon</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save</string>
+    <string name="date_picker_title">Select Date</string>
+    <string name="msg_fields_cannot_be_empty">Fields can not be empty.</string>
 </resources>

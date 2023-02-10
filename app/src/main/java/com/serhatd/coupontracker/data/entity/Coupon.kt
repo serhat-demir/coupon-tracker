@@ -3,9 +3,10 @@ package com.serhatd.coupontracker.data.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "coupons")
-data class Coupon(
+data class Coupon (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo("id")
     var id: Int,
@@ -27,4 +28,4 @@ data class Coupon(
 
     @ColumnInfo("expires_at")
     var expires_at: String
-)
+): Serializable
