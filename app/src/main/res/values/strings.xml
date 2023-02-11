@@ -1,29 +1,40 @@
 <resources>
     <string name="app_name">Coupon Tracker</string>
+    <string name="date_format">MM-dd-yyyy</string>
 
+    <!-- Coupons Fragment -->
     <string name="title_my_coupons">My Coupons</string>
-    <string name="title_add_coupon">Add Coupon</string>
+
+    <!-- Coupon Card -->
     <string name="card_label_discount">%1$d%2$s discount</string>
     <string name="card_label_expires_at">Expires at %1$s</string>
     <string name="card_label_expired_at">Expired at %1$s</string>
-    <string name="card_label_open_website">tap to open website</string>
     <string name="card_label_create_reminder">tap to create reminder</string>
-    <string name="card_label_copy">tap to copy</string>
     <string name="card_label_notes">notes</string>
+
+    <!-- Coupon Website -->
+    <string name="card_label_open_website">tap to open website</string>
+    <string name="http_prefix">http://</string>
+    <string name="https_prefix">https://</string>
+
+    <!-- Copy Coupon Code -->
+    <string name="card_label_copy">tap to copy</string>
+    <string name="msg_copied_to_clipboard">Copied to clipboard.</string>
+
+    <!-- Coupon Actions -->
     <string name="card_label_edit">Edit</string>
     <string name="card_label_share">Share</string>
     <string name="card_label_delete">Delete</string>
+
+    <!-- Delete Coupon Dialog -->
     <string name="title_delete_coupon">Delete Coupon?</string>
     <string name="message_delete_coupon">Are you sure to delete this coupon?</string>
+
+    <!-- Delete Coupon Dialog Buttons -->
     <string name="button_cancel">Cancel</string>
-    <string name="msg_copied_to_clipboard">Copied to clipboard.</string>
-    <string name="calendar_event_description">Your coupon code\'s expire date is coming.</string>
-    <string name="calendar_event_all_day">true</string>
-    <string name="calendar_event_title_prefix">Coupon code for\u0020</string>
-    <string name="date_format">MM-dd-yyyy</string>
     <string name="btn_delete">Delete</string>
-    <string name="http_prefix">http://</string>
-    <string name="https_prefix">https://</string>
+
+    <!-- Coupon Reminder Labels -->
     <string name="calendar_event_intent">vnd.android.cursor.item/event</string>
     <string name="calendar_event_label_begin_time">beginTime</string>
     <string name="calendar_event_label_title">title</string>
@@ -31,15 +42,24 @@
     <string name="calendar_event_label_end_time">endTime</string>
     <string name="calendar_event_label_time">time</string>
     <string name="calendar_event_label_rule">rule</string>
+
+    <!-- Coupon Reminder Values -->
+    <string name="calendar_event_title_prefix">Coupon code for\u0020</string>
+    <string name="calendar_event_description">Your coupon code\'s expire date is coming.</string>
+    <string name="calendar_event_all_day">true</string>
     <string name="calendar_event_rule">FREQ=YEARLY</string>
-    <string name="share_coupon_subject_prefix">Coupon code for %1$s (%2$s%3$s discount) - %4$s</string>
+
+    <!-- Share Coupon Labels -->
     <string name="share_coupon_intent">text/plain</string>
     <string name="share_coupon_label">Share Coupon</string>
+
+    <!-- Share Coupon Values -->
+    <string name="share_coupon_subject_prefix">Coupon code for %1$s (%2$s%3$s discount) - %4$s</string>
+
+    <!-- Add & Edit Coupon Fragment -->
+    <string name="title_add_coupon">Add Coupon</string>
     <string name="title_edit_coupon">Edit Coupon</string>
-    <string name="btn_cancel">Cancel</string>
-    <string name="btn_save">Save</string>
-    <string name="date_picker_title">Select Date</string>
-    <string name="msg_fields_cannot_be_empty">Fields can not be empty.</string>
+
     <string name="label_coupon_url">Coupon URL</string>
     <string name="label_coupon_code">Coupon Code</string>
     <string name="label_coupon_notes">Coupon Notes</string>
@@ -48,4 +68,11 @@
     <string name="label_coupon_expire_date">Expire Date</string>
     <string name="label_coupon_select_date">Select Date</string>
     <string name="btn_coupon_save">Save</string>
+
+    <string name="msg_fields_cannot_be_empty">Fields can not be empty.</string>
+
+    <!-- Date Picker Dialog -->
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save</string>
+    <string name="date_picker_title">Select Date</string>
 </resources>

@@ -24,7 +24,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
                 android:text="@string/title_add_coupon"
                 android:textColor="@color/md_teal_400"
                 android:textSize="48sp" />
@@ -36,7 +35,7 @@
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
                 android:hint="@string/label_coupon_url"
-                android:maxLength="50"
+                android:maxLength="20"
                 tools:ignore="TextFields" />
 
             <EditText
@@ -55,7 +54,7 @@
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
                 android:hint="@string/label_coupon_notes"
-                android:maxLength="60" />
+                android:maxLength="75" />
 
             <EditText
                 android:id="@+id/frgAddCouponTxtDiscount"
