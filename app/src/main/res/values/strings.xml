@@ -40,4 +40,12 @@
     <string name="btn_save">Save</string>
     <string name="date_picker_title">Select Date</string>
     <string name="msg_fields_cannot_be_empty">Fields can not be empty.</string>
+    <string name="label_coupon_url">Coupon URL</string>
+    <string name="label_coupon_code">Coupon Code</string>
+    <string name="label_coupon_notes">Coupon Notes</string>
+    <string name="label_coupon_discount">Discount Amount</string>
+    <string name="label_coupon_currency">Discount Currency</string>
+    <string name="label_coupon_expire_date">Expire Date</string>
+    <string name="label_coupon_select_date">Select Date</string>
+    <string name="btn_coupon_save">Save</string>
 </resources>

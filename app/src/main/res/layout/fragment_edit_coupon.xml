@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
-                android:hint="Coupon URL"
+                android:hint="@string/label_coupon_url"
                 android:text="@{coupon.url}"
                 android:maxLength="50"
                 tools:ignore="TextFields" />
@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
-                android:hint="Coupon Code"
+                android:hint="@string/label_coupon_code"
                 android:text="@{coupon.code}"
                 android:maxLength="25" />
 
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
-                android:hint="Coupon Notes"
+                android:hint="@string/label_coupon_notes"
                 android:text="@{coupon.notes}"
                 android:maxLength="60" />
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
-                android:hint="Discount Amount"
+                android:hint="@string/label_coupon_discount"
                 android:text="@{String.valueOf(coupon.discount)}"
                 android:maxLength="3"
                 android:inputType="numberSigned" />
@@ -79,7 +79,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/input_style"
-                android:hint="Discount Currency"
+                android:hint="@string/label_coupon_currency"
                 android:padding="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 style="@style/InputStyle"
-                android:hint="Expire Date"
+                android:hint="@string/label_coupon_expire_date"
                 android:text="@{coupon.expires_at}"
                 android:enabled="false"
                 tools:ignore="TextFields" />
@@ -116,7 +116,7 @@
                 android:textColor="@color/md_teal_400"
                 android:textStyle="bold"
                 android:onClick="@{() -> fragmentEditCoupon.selectDate()}"
-                android:text="Select Date" />
+                android:text="@string/label_coupon_select_date" />
 
             <Button
                 android:id="@+id/frgEditCouponBtnSave"
@@ -127,7 +127,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:onClick="@{() -> fragmentEditCoupon.editCoupon(coupon.id, frgEditCouponTxtUrl.getText().toString().trim().toLowerCase(), frgEditCouponTxtCode.getText().toString().trim(), frgEditCouponTxtNotes.getText().toString().trim(), frgEditCouponSpCurrency.getText().toString().trim(), Integer.parseInt(frgEditCouponTxtDiscount.getText().toString()), frgEditCouponTxtExpireDate.getText().toString().trim())}"
-                android:text="Save" />
+                android:text="@string/btn_coupon_save" />
         </LinearLayout>
     </ScrollView>
 </layout>
