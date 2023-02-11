@@ -32,7 +32,7 @@ class CouponTrackerRepository(private val context: Context, private val couponDa
     fun addCoupon(url: String, code: String, notes: String, currency: String, discount: Int, expires_at: String) {
         if (url.isNotEmpty() && notes.isNotEmpty() && code.isNotEmpty() && currency.isNotEmpty() && discount > 0 && expires_at.isNotEmpty())
             CoroutineScope(Dispatchers.IO).launch {
-                val coupon = Coupon(0, url, notes, code, currency, discount, expires_at)
+                val coupon = Coupon(0, url, code, notes, currency, discount, expires_at)
                 couponDao.addCoupon(coupon)
 
                 withContext(Dispatchers.Main) {

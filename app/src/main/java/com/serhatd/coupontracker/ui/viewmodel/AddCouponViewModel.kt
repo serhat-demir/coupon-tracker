@@ -9,6 +9,7 @@ import javax.inject.Inject
 class AddCouponViewModel @Inject constructor(private val repo: CouponTrackerRepository): ViewModel() {
     val currencies = repo.currencies
     val navigationObserver = repo.navigationObserver
+    val toastObserver = repo.toastObserver
 
     fun addCoupon(url: String, code: String, notes: String, currency: String, discount: Int, expires_at: String) {
         repo.addCoupon(url, code, notes, currency, discount, expires_at)

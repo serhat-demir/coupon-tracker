@@ -8,24 +8,118 @@
             type="com.serhatd.coupontracker.ui.view.fragment.AddCouponFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
         tools:context=".ui.view.fragment.AddCouponFragment">
 
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="48dp"
-            android:gravity="center"
-            android:text="@string/title_add_coupon"
-            android:textColor="@color/md_teal_400"
-            android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:paddingHorizontal="16dp"
+            android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:text="@string/title_add_coupon"
+                android:textColor="@color/md_teal_400"
+                android:textSize="48sp" />
+
+            <EditText
+                android:id="@+id/frgAddCouponTxtUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/InputStyle"
+                android:hint="@string/label_coupon_url"
+                android:maxLength="50"
+                tools:ignore="TextFields" />
+
+            <EditText
+                android:id="@+id/frgAddCouponTxtCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/InputStyle"
+                android:hint="@string/label_coupon_code"
+                android:maxLength="25" />
+
+            <EditText
+                android:id="@+id/frgAddCouponTxtNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/InputStyle"
+                android:hint="@string/label_coupon_notes"
+                android:maxLength="60" />
+
+            <EditText
+                android:id="@+id/frgAddCouponTxtDiscount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/InputStyle"
+                android:hint="@string/label_coupon_discount"
+                android:maxLength="3"
+                android:inputType="numberSigned" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/frgAddCouponSpCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_style"
+                android:hint="@string/label_coupon_currency"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="@color/white"
+                app:spinner_divider_show="false"
+                app:spinner_divider_size="0.4dp"
+                app:spinner_item_height="50dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="@color/black"
+                app:spinner_popup_elevation="14dp" />
+
+            <EditText
+                android:id="@+id/frgAddCouponTxtExpireDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/InputStyle"
+                android:hint="@string/label_coupon_expire_date"
+                android:enabled="false"
+                tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/frgAddCouponLabelSelectDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="end"
+                android:textSize="20sp"
+                android:textColor="@color/md_teal_400"
+                android:textStyle="bold"
+                android:onClick="@{() -> fragmentAddCoupon.selectDate()}"
+                android:text="@string/label_coupon_select_date" />
+
+            <Button
+                android:id="@+id/frgAddCouponBtnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="22sp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:onClick="@{() -> fragmentAddCoupon.addCoupon(frgAddCouponTxtUrl.getText().toString().trim().toLowerCase(), frgAddCouponTxtCode.getText().toString().trim(), frgAddCouponTxtNotes.getText().toString().trim(), frgAddCouponSpCurrency.getText().toString().trim(), Integer.parseInt(frgAddCouponTxtDiscount.getText().toString()), frgAddCouponTxtExpireDate.getText().toString().trim())}"
+                android:text="@string/btn_coupon_save" />
+        </LinearLayout>
+    </ScrollView>
 </layout>
