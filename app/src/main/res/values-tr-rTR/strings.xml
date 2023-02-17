@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Kupon Takip</string>
+    <string name="date_format">MM-dd-yyyy</string>
+
+    <!-- Coupons Fragment -->
+    <string name="title_my_coupons">Kuponlarım</string>
+
+    <!-- Coupon Card -->
+    <string name="card_label_discount">%1$d%2$s indirim</string>
+    <string name="card_label_expires_at">Geçerlilik: %1$s</string>
+    <string name="card_label_expired_at">Geçerlilik: %1$s</string>
+    <string name="card_label_create_reminder">hatırlatıcı oluştur</string>
+    <string name="card_label_notes">notlar</string>
+
+    <!-- Coupon Website -->
+    <string name="card_label_open_website">siteyi aç</string>
+
+    <!-- Copy Coupon Code -->
+    <string name="card_label_copy">kopyala</string>
+    <string name="msg_copied_to_clipboard">Kopyalandı.</string>
+
+    <!-- Coupon Actions -->
+    <string name="card_label_edit">Düzenle</string>
+    <string name="card_label_share">Paylaş</string>
+    <string name="card_label_delete">Sil</string>
+
+    <!-- Delete Coupon Dialog -->
+    <string name="title_delete_coupon">Kupon Sil?</string>
+    <string name="message_delete_coupon">Bu kuponu silmek istediğinize emin misiniz?</string>
+
+    <!-- Delete Coupon Dialog Buttons -->
+    <string name="button_cancel">İptal</string>
+    <string name="btn_delete">Sil</string>
+
+    <!-- Coupon Reminder Labels -->
+    <string name="calendar_event_intent">vnd.android.cursor.item/event</string>
+    <string name="calendar_event_label_begin_time">beginTime</string>
+    <string name="calendar_event_label_title">title</string>
+    <string name="calendar_event_label_description">description</string>
+    <string name="calendar_event_label_end_time">endTime</string>
+    <string name="calendar_event_label_time">time</string>
+    <string name="calendar_event_label_rule">rule</string>
+
+    <!-- Coupon Reminder Values -->
+    <string name="calendar_event_title_prefix">Kupon kodu:\u0020</string>
+    <string name="calendar_event_description">Kupon kodunuzun geçerlilik tarihi dolmak üzere.</string>
+    <string name="calendar_event_all_day">true</string>
+    <string name="calendar_event_rule">FREQ=YEARLY</string>
+
+    <!-- Share Coupon Labels -->
+    <string name="share_coupon_intent">text/plain</string>
+    <string name="share_coupon_label">Kupon Paylaş</string>
+
+    <!-- Share Coupon Values -->
+    <string name="share_coupon_subject_prefix">%1$s için kupon kodu (%2$s%3$s indirim) - %4$s</string>
+
+    <!-- Add & Edit Coupon Fragment -->
+    <string name="title_add_coupon">Kupon Ekle</string>
+    <string name="title_edit_coupon">Kupon Düzenle</string>
+
+    <string name="label_coupon_url">Kupon URL</string>
+    <string name="label_coupon_code">Kupon Kodu</string>
+    <string name="label_coupon_notes">Kupon Notları</string>
+    <string name="label_coupon_discount">İndirim Miktarı</string>
+    <string name="label_coupon_currency">İndirim Birimi</string>
+    <string name="label_coupon_expire_date">Geçerlilik Tarihi</string>
+    <string name="label_coupon_select_date">Tarih Seç</string>
+    <string name="btn_coupon_save">Kaydet</string>
+
+    <string name="msg_fields_cannot_be_empty">Alanlar boş olamaz.</string>
+
+    <!-- Date Picker Dialog -->
+    <string name="btn_cancel">İptal</string>
+    <string name="btn_save">Kaydet</string>
+    <string name="date_picker_title">Tarih Seç</string>
+</resources>
